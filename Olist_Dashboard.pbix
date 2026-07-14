@@ -1,0 +1,62 @@
+========================================================================
+OLIST E-COMMERCE POWER BI DASHBOARD SETUP INSTRUCTIONS
+========================================================================
+
+As an AI system running on macOS, I cannot natively run Power BI Desktop (which is Windows-exclusive) or compile its proprietary binary .pbix archive format. 
+
+However, because the datasets have already been cleaned and pre-calculated (with RFM segments, logistics delays, and category translations) into a single flat Master Fact table, you can build this entire dashboard in Power BI Desktop on a Windows machine in under 5 minutes:
+
+------------------------------------------------------------------------
+STEP-BY-STEP RECONSTRUCTION GUIDE:
+------------------------------------------------------------------------
+
+1. Open Power BI Desktop on your Windows machine.
+2. Click "Get Data" -> select "Text/CSV" -> load the following file:
+   data/processed/master_orders_dataset.csv
+   
+3. Model Relationships (Optional Star Schema):
+   - You can load master_orders_dataset.csv directly as a single flat table.
+   - Or join it with the dimension tables:
+     * olist_customers_dataset.csv (on customer_unique_id)
+     * olist_sellers_dataset.csv (on seller_id)
+     * olist_products_dataset.csv (on product_id)
+
+4. Create Calendar Table (DimDate):
+   Go to Modeling -> New Table -> Paste the DAX code:
+   
+   DimDate = 
+   VAR MinDate = MIN(master_orders_dataset[order_purchase_timestamp])
+   VAR MaxDate = MAX(master_orders_dataset[order_purchase_timestamp])
+   RETURN
+   ADDCOLUMNS(
+       CALENDAR(MinDate, MaxDate),
+       "Year", YEAR([Date]),
+       "Quarter", "Q" & FORMAT([Date], "Q"),
+       "MonthNum", MONTH([Date]),
+       "MonthName", FORMAT([Date], "MMMM"),
+       "MonthYear", FORMAT([Date], "MMM YYYY"),
+       "MonthYearSort", YEAR([Date]) * 100 + MONTH([Date]),
+       "IsWeekend", IF(WEEKDAY([Date], 2) >= 6, "Weekend", "Weekday")
+   )
+
+5. Copy DAX Measures:
+   Open the file dashboard/dax_measures.md and copy the DAX measures:
+   - Total Revenue = SUM(master_orders_dataset[revenue_per_order])
+   - Total Orders = DISTINCTCOUNT(master_orders_dataset[order_id])
+   - Average Order Value = DIVIDE([Total Revenue], [Total Orders], 0)
+   - Late Delivery Rate = DIVIDE(CALCULATE([Total Orders], master_orders_dataset[late_delivery_flag] = 1), CALCULATE([Total Orders], NOT(ISBLANK(master_orders_dataset[order_delivered_customer_date]))), 0)
+
+6. Set Layout Blueprints:
+   Open dashboard/dashboard_design_guide.md for the visual layouts, charts, and colors for all 6 pages:
+   - Page 1: Executive Summary
+   - Page 2: Sales Analysis
+   - Page 3: Customer Analysis
+   - Page 4: Seller Analysis
+   - Page 5: Delivery Analysis
+   - Page 6: Reviews Analysis
+
+------------------------------------------------------------------------
+INTERACTIVE LOCAL ALTERNATIVE:
+------------------------------------------------------------------------
+You can run the fully interactive web dashboard built in Python (Streamlit + Plotly) directly on your local machine:
+  streamlit run src/dashboard_app.py
