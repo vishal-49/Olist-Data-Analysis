@@ -93,13 +93,17 @@ erDiagram
 │   ├── 07_reviews_analysis.sql
 │   └── 08_advanced_queries.sql
 ├── dashboard/
-│   ├── dax_measures.md        # Complete list of DAX measures
-│   └── dashboard_design_guide.md # Page-by-page dashboard layout blueprints
+│   ├── executive_dashboard.png
+│   └── sales_dashboard.png
+|   └── customer_dashboard.png
+|   └── seller_dashboard.png
+|   └── delivery_dashboard.png
+|   └── reviews_dashboard.png
 ├── reports/
-│   ├── Executive_Report.pdf
-│   ├── Data_Dictionary.pdf
-│   ├── Business_Insights.pdf
-│   └── Dashboard_Guide.pdf
+│   ├── Executive_Report.md
+│   ├── Data_Dictionary.md
+│   ├── Business_Insights.md
+│   └── Dashboard_Guide.md
 ├── src/
 │   ├── cleaning.py            # Clean functions module
 │   ├── features.py            # Feature engineering modules
