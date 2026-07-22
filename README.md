@@ -1,5 +1,5 @@
 # Olist Brazilian E-Commerce End-to-End Data Analytics Project
-### 🇧🇷 A Production-Grade Business & Operational Case Study
+### A Production-Grade Business & Operational Case Study
 
 ---
 
