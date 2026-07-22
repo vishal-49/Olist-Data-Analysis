@@ -345,11 +345,6 @@ This repository contains a complete suite of production analytics assets:
 ---
 
 ##  Dashboard Demonstration
-
-The repository includes a fully interactive Power BI Dashboard (`dashboard/Olist_Dashboard.pbix`).
-
->  **Dashboard Walkthrough Video**: *Coming Soon!*
-> 
 > Watch the interactive video walkthrough demonstrating DAX slicers, drill-through pages, and visual hierarchy:  
 > [ Watch Dashboard Video Demo (Placeholder Link)](https://github.com/your-username/Olist-Data-Analysis)
 
