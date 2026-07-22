@@ -1,8 +1,6 @@
 # Olist Brazilian E-Commerce End-to-End Data Analytics Project
 ### 🇧🇷 A Production-Grade Business & Operational Case Study
 
-![Olist Banner](https://raw.githubusercontent.com/olist/olist-dataset/master/olist.png)
-
 ---
 
 ## 1. Project Overview
