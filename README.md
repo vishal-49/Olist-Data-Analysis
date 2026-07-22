@@ -357,9 +357,9 @@ The repository includes a fully interactive Power BI Dashboard (`dashboard/Olist
 
 ##  Contact & Connect
 
--  **GitHub**: [github.com/your-username](https://github.com/vishal-49)
--  **LinkedIn**: [linkedin.com/in/your-profile](linkedin.com/in/vishal-singh-74009b38a)
--  **Email**: [your.email@domain.com](mailto:vs4880489@gmail.com)
+-  **GitHub**: [github.com/vishal-49](https://github.com/vishal-49)
+-  **LinkedIn**: [linkedin.com/in/vishal-singh-74009b38a](linkedin.com/in/vishal-singh-74009b38a)
+-  **Email**: [vs4880489@gmail.com](mailto:vs4880489@gmail.com)
 
 ---
 
