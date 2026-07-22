@@ -141,12 +141,13 @@ Olist-Data-Analysis/
 ├── data/
 │   ├── raw/                      # 9 Raw Olist CSV datasets
 │   └── processed/                # Cleaned, translated & engineered master datasets
-├── assets/
-│   └── dashboard/                # High-resolution Power BI dashboard screenshots
 ├── dashboard/
-│   ├── Olist_Dashboard.pbix      # Interactive Power BI Desktop report
-│   ├── dax_measures.md           # DAX metric repository & measure calculations
-│   └── dashboard_design_guide.md # UX/UI layout guides and visual hierarchy specs
+│   ├── executive_dashboard.png
+│   ├── sales_dashboard.png
+│   └── customer_dashboard.png
+|   └── delivery_dashboard.png
+|   └── seller_dashboard.png
+|   └── reviews_dashboard.png
 ├── notebooks/
 │   ├── 01_business_understanding.ipynb
 │   ├── 02_data_understanding.ipynb
