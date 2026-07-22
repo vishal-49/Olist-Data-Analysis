@@ -135,7 +135,7 @@ erDiagram
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/olist-data-analytics.git
+   git clone https://github.com/vishal-49/olist-data-analytics.git
    cd olist-data-analytics
    ```
 
@@ -159,4 +159,4 @@ erDiagram
 
 5. **SQL & Power BI**:
    - The SQL scripts under `sql/` can be executed directly in PgAdmin or DBeaver.
-   - Load the processed CSVs under `data/processed/` into Power BI Desktop and deploy using the blueprint in the [dashboard guide](dashboard/dashboard_design_guide.md).
+   - Load the processed CSVs under `data/processed/` into Power BI Desktop and deploy using the blueprint in the dashboard guide.
